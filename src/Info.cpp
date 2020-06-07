@@ -19,11 +19,11 @@ double  appInfo::getPrice() const { return m_price;}
 
 int     appInfo::getDate()  const { return m_releaseDate;}
    
-void    appInfo::setName(QString name) { m_appName = name; }
+void    appInfo::setName(QString name)  { m_appName = name; }
 
-void    appInfo::setPrice(double price){m_price = price; }
+void    appInfo::setPrice(double price) {m_price = price; }
 
-void    appInfo::setDate(int data)     {m_releaseDate = data ;}
+void    appInfo::setDate(int data)      {m_releaseDate = data ;}
           
 QDebug operator<<(QDebug dbg, const appInfo &info) {
     dbg << info.m_appName;
