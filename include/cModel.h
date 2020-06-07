@@ -9,7 +9,6 @@
 #include "Info.h"
 
 class custom_model : public QAbstractTableModel {
-
             Q_OBJECT
     public:
         custom_model(QObject *parent = nullptr);
