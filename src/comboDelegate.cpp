@@ -8,9 +8,7 @@ ComboBoxDelegate::ComboBoxDelegate(QObject *parent)
     model = new custom_model;
 }
 
-QWidget *ComboBoxDelegate::createEditor(QWidget *parent,
-                                       const QStyleOptionViewItem &option ,
-                                       const QModelIndex &index) const
+QWidget *ComboBoxDelegate::createEditor(QWidget *parent,const QStyleOptionViewItem &option ,const QModelIndex &index) const
 {
     Q_UNUSED(option)
     Q_UNUSED(index)
@@ -29,17 +27,14 @@ void ComboBoxDelegate::setEditorData(QWidget *editor,const QModelIndex &index) c
     comboBox->showPopup();
 }
 
-void ComboBoxDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
-                                   const QModelIndex &index) const
+void ComboBoxDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,const QModelIndex &index) const
 {
     QComboBox *comboBox = static_cast<QComboBox*>(editor);
     model->setData(index,comboBox->currentData(),Qt::EditRole);
     emit model->dataChanged(index,index);
 }
 
-void ComboBoxDelegate::updateEditorGeometry(QWidget *editor, 
-                                    const QStyleOptionViewItem &option,
-                                    const QModelIndex &index) const
+void ComboBoxDelegate::updateEditorGeometry(QWidget *editor,const QStyleOptionViewItem &option,const QModelIndex &index) const
 {
     Q_UNUSED(index)
     editor->setGeometry(option.rect);
